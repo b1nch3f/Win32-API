@@ -9,10 +9,10 @@
 // Global variables  
 
 // The main window class name.  
-static TCHAR szWindowClass[] = L"win32app";
+static TCHAR szWindowClass[] = _T("win32app");
 
 // The string that appears in the application's title bar.  
-static TCHAR szTitle[] = L"Win32 Guided Tour Application";
+static TCHAR szTitle[] = _T("Win32 Guided Tour Application");
 
 HINSTANCE hInst;
 
@@ -44,8 +44,8 @@ int CALLBACK WinMain(
 	if (!RegisterClassEx(&wcex))
 	{
 		MessageBox(NULL,
-			L"Call to RegisterClassEx failed!",
-			L"Win32 Guided Tour",
+			_T("Call to RegisterClassEx failed!"),
+			_T("Win32 Guided Tour"),
 			NULL);
 
 		return 1;
@@ -68,7 +68,7 @@ int CALLBACK WinMain(
 		szTitle,
 		WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, CW_USEDEFAULT,
-		800, 600,
+		500, 100,
 		NULL,
 		NULL,
 		hInstance,
@@ -78,8 +78,8 @@ int CALLBACK WinMain(
 	if (!hWnd)
 	{
 		MessageBox(NULL,
-			L"Call to CreateWindow failed!",
-			L"Win32 Guided Tour",
+			_T("Call to CreateWindow failed!"),
+			_T("Win32 Guided Tour"),
 			NULL);
 
 		return 1;
@@ -116,7 +116,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	PAINTSTRUCT ps;
 	HDC hdc;
-	TCHAR greeting[] = L"Hello, World!";
+	TCHAR greeting[] = _T("Hello, World!");
 
 	switch (message)
 	{
